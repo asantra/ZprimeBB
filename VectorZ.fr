@@ -1,0 +1,71 @@
+M$ModelName = "VectorZp";
+
+M$Information = {
+Authors -> {"C.A. Manzari"},
+Version -> "1.0",
+Date -> "17. 09. 2020",
+Institutions -> {"UZH"},
+Emails -> {"claudioandrea.manzari@physik.uzh.ch"}};
+
+M$InteractionOrderHierarchy = {
+  {QCD, 1},
+  {QED, 2},
+  {NP,1} 
+};
+
+M$Parameters = {
+
+MZ1 =={ 
+    ParameterType -> External,
+    BlockName     -> Z1MASS,
+    Value         -> 5000.0,
+    Description   -> "Zp mass"
+},
+
+gNPq =={ 
+    ParameterType -> External,
+    BlockName     -> gZpq,
+    Value         -> 0.5,
+    Description   -> "Zp - Quarks coupling"
+},
+
+gNPmu =={ 
+    ParameterType -> External,
+    BlockName     -> gZpl,
+    Value         -> 0.5,
+    Description   -> "Zp - Muon coupling"
+}
+
+};
+
+M$ClassesDescription = {
+
+V[5] == {
+ClassName        -> Z1,
+Mass             -> {MZ1, Internal},
+Width            -> {WZ1, 1},
+SelfConjugate    -> True,
+PropagatorLabel  -> "Z1",
+PropagatorType   -> Sine,
+PropagatorArrow  -> None, 
+ParticleName     -> "Z1",
+FullName         -> "Z1"
+}
+
+}
+
+(********************* The Lagrangian *********************)
+
+(***** Z' - Quarks *****)
+
+LZQ := gNPq tbar.Ga[nu].ProjM.t Z1[nu] + gNPq bbar.Ga[nu].ProjM.b Z1[nu];
+
+(***** Z' - Leptons *****)
+
+LZL := gNPmu mubar.Ga[nu].ProjM.mu Z1[nu];
+
+(***********************)
+
+LZP := 1/2*(LZQ + HC[LZQ]+ LZL + HC[LZL]);
+
+(***********************************************************)
