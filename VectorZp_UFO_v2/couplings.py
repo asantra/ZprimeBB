@@ -57,6 +57,7 @@ GC_12 = Coupling(name = 'GC_12',
                  value = 'complex(0,1)*G**2',
                  order = {'QCD':2})
 
+#### coupling for Zprime
 GC_13 = Coupling(name = 'GC_13',
                  value = 'complex(0,1)*gNPmu',
                  order = {'NP':1})  ### initially this was "1"
@@ -64,6 +65,14 @@ GC_13 = Coupling(name = 'GC_13',
 GC_14 = Coupling(name = 'GC_14',
                  value = 'complex(0,1)*gNPq',
                  order = {'NP':1})  ### initially this was "1"
+
+### coupling for zprime-s-b~/zprime-s~-b
+GC_96 = Coupling(name = 'GC_96',
+                 value = 'complex(0,1)*gNPq*0.1',
+                 order = {'NP':1})  ### initially this was "1"
+
+
+### coupling ends here
 
 GC_15 = Coupling(name = 'GC_15',
                  value = 'I1a31',

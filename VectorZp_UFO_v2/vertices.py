@@ -861,16 +861,16 @@ V_142 = Vertex(name = 'V_142',
                lorentz = [ L.FFV2 ],
                couplings = {(0,0):C.GC_14})
 
-#V_143 = Vertex(name = 'V_143',
-               #particles = [ P.b__tilde__, P.s, P.Z1 ],
-               #color = [ 'Identity(1,2)' ],
-               #lorentz = [ L.FFV2 ],
-               #couplings = {(0,0):C.GC_14})
+V_143 = Vertex(name = 'V_143',
+               particles = [ P.b__tilde__, P.s, P.Z1 ],
+               color = [ 'Identity(1,2)' ],
+               lorentz = [ L.FFV2 ],
+               couplings = {(0,0):C.GC_96})
 
-#V_144 = Vertex(name = 'V_144',
-               #particles = [ P.b__tilde__, P.s, P.Z1 ],
-               #color = [ 'Identity(1,2)' ],
-               #lorentz = [ L.FFV2 ],
-               #couplings = {(0,0):C.GC_14})
+V_144 = Vertex(name = 'V_144',
+               particles = [ P.b, P.s__tilde__, P.Z1 ],
+               color = [ 'Identity(1,2)' ],
+               lorentz = [ L.FFV2 ],
+               couplings = {(0,0):C.GC_96})
 
 
